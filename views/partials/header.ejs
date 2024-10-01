@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <% if(nav == true) { %>
+    <div class="w-full px-14 py-3 flex justify-between bg-zinc-600 text-white">
+      <div class="flex items-center gap-4">
+        <img class="w-12 h-12" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWhYXJEsqPEscpE30APrKz_ZUYR38IAcgcqA&s" alt="Pinterest Logo">
+       <a href="/profile"><h3 class="text-2xl font-bold">Pin</h3></a> 
+      </div>
+      <div class="flex gap-10 items-center">
+        <a href="/profile">Profile</a>
+        <a href="/feed">Feed</a>
+        <a class="px-3 py-2 bg-red-700 text-white rounded-lg" href="/">Logout</a>
+      </div>
+    </div>
+  <% } else { %>
+    <div class="w-full px-14 py-3 flex justify-between bg-zinc-600 text-white">
+      <div class="flex items-center gap-4">
+        <img class="w-12 h-12" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWhYXJEsqPEscpE30APrKz_ZUYR38IAcgcqA&s" alt="Pinterest Logo">
+        <a href="/"><h3 class="text-2xl font-bold">Pin</h3></a>
+      </div>
+    </div>
+  <% } %>
+
+
+   

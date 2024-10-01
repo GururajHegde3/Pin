@@ -1,0 +1,25 @@
+<%include ./partials/header.ejs %>
+<div class="w-full h-screen bg-cover  bg-zinc-800 flex items-center justify-center">
+  <div class="w-[25vw]  bg-zinc-200 px-4 py-5 rounded-[30px]">
+    <h1 class="text-3xl text-center tracking-tighter leading-none capitalize">Create New Account</h1>
+    <form class="py-5" action="/register" method="post">
+      <input class="border-2 border-gray-400 mt-3 hover:bg-zinc-200 rounded-md block w-full px-3 py-2" type="text" name="username" placeholder="username">
+      <input class="border-2 border-gray-400 mt-2 rounded-md hover:bg-zinc-200  block w-full px-3 py-2" type="email" name="email" placeholder="email">
+      <input class="border-2 border-gray-400 mt-2 rounded-md hover:bg-zinc-200  block w-full px-3 py-2" type="number" name="contact" placeholder="contact">
+      <input class="border-2 border-gray-400 mt-2 rounded-md hover:bg-zinc-200 block w-full px-3 py-2" type="password" name="password" placeholder="password">
+      <input class="border-2 mt-4 rounded-full block w-full px-3 py-2 bg-red-600 rounded-full" type="submit" value="Continue" >
+     <p class="text-xs font-semibold mt-7 w-2/3 text-center mx-auto">By continuing, you agree to Pinterest's 
+     Terms of Service
+      and acknowledge that you've read our 
+     Privacy Policy
+     . 
+     Notice at collection
+     .
+     Already a member?
+     Log in</p>
+   <a class="inline-block mt-7 text-sm font-semibold text-center w-full"  href="/">Login Existing Account</a>
+    </form>
+
+  </div>
+</div>
+<%include ./partials/footer.ejs %>
