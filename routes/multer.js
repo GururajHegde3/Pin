@@ -1,18 +1,30 @@
-const multer =require("multer");
-const {v4:uuidv4}= require('uuid');
-const path = require("path");
+const multer = require("multer");
+const { CloudinaryStorage } = require("multer-storage-cloudinary");
+const cloudinary = require("cloudinary").v2;
+const { v4: uuidv4 } = require("uuid"); // Import uuidv4 to generate unique IDs
+const path = require("path"); // Import path to handle file extensions
 
-const storage=multer.diskStorage({
-    destination:function(req,file,cb){
-        cb(null,'./public/images/uploads')
-    },
-    filename:function(req,file,cb){
-    
-        const uniquename = uuidv4();
-        cb(null,uniquename+path.extname(file.originalname) );
-    }
+// Configure Cloudinary with your credentials
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.CLOUD_API_KEY,
+  api_secret: process.env.CLOUD_API_SECRET,
 });
-const upload =multer({storage:storage});
+
+// Set up the Cloudinary storage
+const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+    folder: "uploads", // Specify the folder in Cloudinary where the images will be uploaded
+    allowedFormats: ["png", "jpg", "jpeg"], // Define allowed formats
+    filename: (req, file) => {
+      const uniqueName = uuidv4(); // Generate a unique filename using UUID
+      return uniqueName + path.extname(file.originalname); // Return the file name with extension
+    },
+  },
+});
+
+// Create the upload middleware using multer with Cloudinary storage
+const upload = multer({ storage: storage });
 
 module.exports = upload;
-  

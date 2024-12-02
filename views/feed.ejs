@@ -6,7 +6,8 @@
         <div class="w-full h-40 bg-sky-200 rounded-lg overflow-hidden">
     
           <a href="/feed/post/<%= elem._id %>">
-            <img class="w-full h-full object-cover" src="/images/uploads/<%= elem.image %>" alt="<%= elem.title %>">
+            <!-- Use the Cloudinary URL stored in elem.image -->
+            <img class="w-full h-full object-cover" src="<%= elem.image %>" alt="<%= elem.title %>">
           </a>
         </div>
         <h5 class="mt-2 text-sm"><%= elem.title %></h5>

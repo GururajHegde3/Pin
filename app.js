@@ -8,7 +8,8 @@ const expressSession=require("express-session");
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const passport = require('passport');
-
+const dotenv = require("dotenv");
+dotenv.config();
 var app = express();
 
 // view engine setup
@@ -17,7 +18,7 @@ app.set('view engine', 'ejs');
 app.use(expressSession({
   resave:false,
   saveUninitialized:false,
-  secret:"hey!"
+  secret:process.env.SECRET,
 }));
 app.use(passport.initialize());
 app.use(passport.session());
