@@ -1,6 +1,5 @@
 <%include ./partials/header.ejs %>
-<!-- Add overflow-x-hidden to the body or a parent container -->
-<div class="container w-full min-h-screen bg-zinc-800 pt-1 text-white px-4 sm:px-6 md:px-8 overflow-x-hidden">
+<div class="container w-full min-h-screen bg-zinc-800 pt-1 text-white px-4 sm:px-6 md:px-8">
     <form id="uploadform" hidden action="/fileupload" method="post" enctype="multipart/form-data">
         <input type="file" name="image">
     </form>
@@ -48,3 +47,4 @@ document.querySelector("#uploadform input").addEventListener("change", function 
 });
 </script>
 <%include ./partials/footer.ejs %>
+
